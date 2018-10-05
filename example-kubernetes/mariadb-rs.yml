@@ -7,7 +7,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - nodePort: 30000
+    - nodePort: 32000
       port: 3306
   selector:
     app: galera
@@ -58,10 +58,10 @@ spec:
             - --readiness
           initialDelaySeconds: 120
           periodSeconds: 1
-        livenessProbe:
-          exec:
-            command:
-            - /healthcheck.sh
-            - --liveness
-          initialDelaySeconds: 120
-          periodSeconds: 1
+    #    livenessProbe:
+     #     exec:
+      #      command:
+       #     - /healthcheck.sh
+        #    - --liveness
+         # initialDelaySeconds: 120
+         # periodSeconds: 1

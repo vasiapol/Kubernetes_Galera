@@ -5,10 +5,10 @@ metadata:
   labels:
     app: galera-ss
 spec:
+  type: NodePort
   ports:
-  - port: 3306
-    name: mysql
-  clusterIP: None
+    - nodePort: 32000
+      port: 3306
   selector:
     app: galera-ss
 
@@ -75,4 +75,4 @@ spec:
       storageClassName: slow
       resources:
         requests:
-          storage: 10Gi
+          storage: 5Gi
